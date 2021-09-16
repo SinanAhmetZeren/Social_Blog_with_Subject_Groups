@@ -1,0 +1,30 @@
+<nav class="navbar  navbar-expand-lg" 
+style=" color: #0154d5;
+background-image: radial-gradient(rgba(11, 73, 114, 0.869),rgba(8, 53, 83, 0.9));">
+<!-- background-image: radial-gradient(#0b4972,#083553);"> -->
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+    <a class="navbar-brand" href="{% url 'blog:about' %}">Social Blog</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'blog:subjects' %}">Subjects <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'blog:authors' %}">Authors</a>
+        </li>
+      </ul>
+      <div class="navbar-nav">
+        {% if user.is_authenticated %}
+          <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+          <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+        {% else %}
+          <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+          <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>

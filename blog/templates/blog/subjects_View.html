@@ -1,0 +1,20 @@
+{% extends "./base.html" %}
+
+{% block content %}
+<div class="all-subjects-container" id="all-subjects-container">
+    {% for subject in subjects %}
+        <div class="single-subject-card" data-subject_id="{{subject.id}}" >
+                    <div class="subject-title-box" >{{subject.subjectName}} </div>
+                    <div class="subject-image-box"><img class="subject-image" src="{{subject.image.url}}" alt=""></div>
+                    <div class="subject-date-box"> <strong>{{subject.article_set.count}}</strong> articles since <strong>{{subject.createdDate | date:'F d, Y'}}</strong></div> 
+        </div>
+    {% endfor %}
+</div>
+
+{% if user.is_superuser %}
+<a class="add-subject-button" href="{% url 'blog:subjectCreate' %}">
+    <button class="btn btn-info ">Add New Subject </button>
+</a>
+{% endif %}
+
+{% endblock %}

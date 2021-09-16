@@ -1,0 +1,39 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+    <div class="content-section  user-page">
+      <div class="profile-section-all">
+        <div class="profile-image-section">
+          {% for user in profile_users%}
+          <img class="profile-image" src="{{ user.profile.image.url }}">
+       {% endfor %}
+        </div>
+        {% for user in profile_users%}
+        <div class="profile-information-section">
+          <div class="profile-info-item" class="social-image"><img class="social-img" src="/static/user.png" alt=""></div>
+          <div class="profile-info-item">{{ user.username }}</div>
+          <div class="profile-info-item" class="social-image"><img class="social-img" src="/static/email.png" alt=""></div>
+          <div class="profile-info-item">{{ user.profile.email }}</div>
+          <div class="profile-info-item" class="social-image"><img class="social-img" src="/static/facebook.jpg" alt=""></div>
+          <div class="profile-info-item" > {% if user.profile.facebook %}{{ user.profile.facebook|truncatechars:50 }}{% else %} &nbsp  {% endif %} </div>
+          <div class="profile-info-item" class="social-image"><img class="social-img" src="/static/instagram.png" alt=""></div>
+          <div class="profile-info-item"> {% if user.profile.instagram %}{{ user.profile.instagram|truncatechars:50 }}  {% else %}  &nbsp  {% endif %}</div>
+         
+        </div>
+        {% endfor %}
+       </div>
+        {% for user in profile_users%}
+        {% if user.article_set.count %}
+
+        <div class="form-group mt-3">
+              <!-- <button class="btn btn-info" type="submit">Articles</button> -->
+              <a class="btn btn-primary" href="{% url 'blog:authorArticles' user.username %}">Go to   {{user.username|upper}}'s   Articles</a>
+          </div>        
+          {% endif %}
+
+          {% endfor %}
+
+    </div>
+{% endblock content %}

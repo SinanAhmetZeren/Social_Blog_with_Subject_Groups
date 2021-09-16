@@ -1,0 +1,18 @@
+{% extends "./base.html" %}
+
+{% block content %}
+
+<div class="allusers-profile-container" id="allusers-profile-container"> 
+{% for user in users %}
+    <div class="allusers-profile" data-username="{{user.username}}" >
+        <img class="profile-image-allusers"  src="{{ user.profile.image.url }}">
+        <div class="profile-name-allusers">{{user.username}}</div>
+    </div>
+<!-- {% if user.article_set.count != 0 %} -->
+
+   <!-- {% endif %} -->
+{% endfor %}
+
+</div>
+{% endblock %}
+

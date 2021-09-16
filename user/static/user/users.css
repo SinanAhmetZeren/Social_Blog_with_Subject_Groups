@@ -1,0 +1,79 @@
+.user-page {
+    width: 60%;
+    color:white;
+    margin: 3rem auto;
+}
+
+.profile-image{
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    box-shadow: rgb(0, 0, 0) 0px -15px 15px 10px inset;
+}
+
+
+.profile-section-all {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    background-color: rgba(35, 19, 107, 0.438);
+    padding: 2rem;
+    border-radius: 1rem;
+
+}
+
+.profile-image-section {
+    /* background-color: rgb(88, 62, 206); */
+    justify-self: center;
+    align-self: center;
+
+    
+}
+
+.profile-information-section {
+    padding: 0.3rem;
+    background-color:rgba(88, 62, 206, 0.575);
+    display: grid;
+    grid-template-columns: 1fr 3fr ;
+    border-radius: 1rem;
+
+
+}
+
+.profile-info-item {
+    margin: 0.3rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    background-color: rgba(107, 79, 230, 0.582);
+    border-radius: 1rem;
+
+}
+
+
+.profile-info-item:first-child {
+    padding: 0 .6rem;    /* width: 100%; */
+    /* background-color: red */
+}
+
+.profile-info-item:nth-child(2n+1) {
+    justify-self: center;
+    /* width: 100%; */
+    /* background-color: red */
+}
+.profile-info-item:nth-child(2n) {
+    align-self: center;
+    padding: 1.6rem;
+}
+
+
+.social-image {
+    height: 60px;
+    border-radius: 50%;
+    justify-self: center;
+
+}
+.social-img {
+    height: 5rem;
+    padding: .8rem;
+    border-radius: 50%;
+}

@@ -1,0 +1,260 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: Georgia, serif;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  background-image: url(/static/universe-unsplash.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
+
+
+
+.navbar {
+    padding: 1rem 5rem;
+}
+
+.navbar-brand {
+    padding: 0.33rem .3rem;
+}
+
+.navbar a,
+.navbar li {
+    color: #98d0f5 !important;
+    transition: all 0.3s;
+    
+}
+    
+
+.navbar a:hover,
+.navbar li:hover {
+    color:  #98d0f5 !important;
+    background-color: #98d0f541;
+    border-radius: 5px;}
+
+
+.navbar-toggler-icon {
+    background-image: url(/static/navbartoggler.png);
+}
+
+
+
+/* ********** SUBJECTS PAGE STYLING *********** */
+
+.all-subjects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 1rem 3rem;
+
+}
+
+.single-subject-card{
+    margin: 1rem;
+    height: 28rem;
+    display: grid;
+    grid-template-rows: 3fr 5fr 3fr;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -5px 5px 0px inset;
+    border: 1px solid #000000;
+    transition: 0.5s;
+    background-color: white;
+
+}
+
+
+.single-subject-card:hover {
+    transform: scale(1.02);    
+}
+
+.subject-image-box {
+    height: 16rem;
+}
+
+.subject-image {
+    height: 100%;    
+    width: 100%;    
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.subject-title-box{
+    font-size: 2rem;
+    align-self: center;
+    justify-self: center;
+    text-transform: uppercase;
+    padding: 0 1rem ;
+    text-align: center;
+}
+
+
+.subject-date-box{
+    font-weight: 400;
+    align-self: center;
+    justify-self: center;
+}
+
+.add-subject-button {
+    margin: 0 40% 2rem 40%;
+    display: block;
+}
+
+.add-new-subject {
+    margin: 2rem 10rem;
+    color: white;
+}
+
+
+/* ********** ARTICLES PAGE STYLING *********** */
+.title-and-button {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+}
+
+.subject-articles-subject-name {
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0 0 3rem;
+    text-transform: uppercase;
+}
+
+.add-new-article-button {
+    justify-self: right;
+    align-self: center;
+    margin-right: 3rem;
+}
+
+.button-in-empty-page{ 
+    margin: 2rem 5rem;
+    justify-self: left;
+}
+
+.subject-articles-container {
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr); */
+    gap: 2rem;
+    margin: 1rem 3rem;
+}
+
+.single-article-card{
+    height: 16rem;
+    width: 100%;
+    display: grid; 
+    grid-template-columns: 1fr 2fr;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -5px 15px 15px inset,
+    rgba(240, 235, 235, 0.17) 0px 1px 5px 5px ;
+    transition: 0.5s;
+    overflow: hidden;
+    background-color: white;
+
+
+}
+
+
+.single-article-card:hover {
+    transform: scale(1.03);    
+}
+
+.article-image-box {
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.article-image {
+    height: 100%;    
+    width: 100%;    
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.title-content-date {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.article-title-box{
+    font-size: 1.5rem;
+    align-self: center;
+    justify-self: center;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 0 1rem 0;
+    flex: 0 1 auto;
+}
+
+.article-content-box {
+    width: 100%;
+    justify-self: center;
+    padding: 0 0 1rem 0;
+    flex: 0 3 70%;
+
+}
+
+.article-date-box{
+    font-weight: 400;
+    align-self: center;
+    justify-self: center;
+    margin-bottom: 1rem;
+    padding: 0 2rem ;
+    flex: 0 1 auto;
+
+
+}
+
+
+.article-form-content-section{
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+}
+
+.delete-page{
+    color: white;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+/* allusers view */
+.allusers-profile-container {
+    margin: 2rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.allusers-profile{
+    /* background-color: #0A476E; */
+    background-image: radial-gradient(#0b4972,#083553);
+    display: flex;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 5rem;
+}
+
+.profile-image-allusers {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.profile-name-allusers {
+    text-transform: uppercase;
+    align-self: center;
+    margin-left: 0.5rem;
+}

@@ -1,0 +1,47 @@
+{% extends "./base.html" %}
+
+{% block content %}
+
+
+{% for article in articles %}
+    {% if forloop.first %}  
+    <div class="title-and-button">
+        <div class="subject-articles-subject-name">{{article.articleSubject.subjectName|truncatechars:100}}</div>
+        <a class="add-new-article-button" href="{% url 'blog:articleCreate' view.kwargs.pk  %}">
+            <button class="btn btn-info add-new-article-button ">Add New Article </button>
+        </a>
+    </div>
+    {% endif %} 
+{% endfor %}
+
+{% if not articles %}
+<div class="button-in-empty-page">
+    <a class="add-new-article-button" href="{% url 'blog:articleCreate'  view.kwargs.pk  %}">
+        <button class="btn btn-info add-new-article-button ">Add New Article </button>
+    </a>
+</div>
+{% endif %}
+
+<div class="subject-articles-container" id="subject-articles-container">
+    {% for article in articles %}
+
+        <div class="single-article-card" data-article_id="{{article.id}}" >  
+                    <!-- {% if article.image %} -->
+                    <!-- {% endif %} -->
+                    <div>
+                        <div class="article-image-box"><img class="article-image" src="{{article.image.url}}" alt=""></div>
+                    </div>
+                    <div class="title-content-date">
+                        <div class="article-title-box">{{article.title|truncatechars:50}} </div>
+                        <div class="article-content-box">{{article.content|truncatechars:450}} </div>
+                        <div class="article-date-box">Posted on {{article.date_posted  | date:'F d, Y'|upper}} by {{article.author|upper}} </div>
+                    </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+
+
+{% endblock %}
+

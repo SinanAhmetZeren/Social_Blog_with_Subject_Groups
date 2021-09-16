@@ -1,0 +1,37 @@
+{% extends "./base.html" %}
+
+
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/article.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="article">
+
+  <div class="left-column">
+    <div class="article-profile-section">
+      <div class="article-profile-image"> <img src="{{ object.author.profile.image.url }}" alt=""></div>
+      <!-- <div class="article-profile-username">Author: {{ object.author.username |upper }}</div> -->
+      <a class="mr-2 author-link" href="{% url 'public_profile' object.author.username %}">{{ object.author.username | upper }}</a>
+
+    </div>
+    <div class="article-date">Posted: {{ object.date_posted|date:"F d, Y" }}
+    </div>
+    {% if object.author == user %}
+    <div > 
+      <a class="btn btn-secondary btn-sm mt-2 mb-1 article-update-button" href="{% url 'blog:articleUpdate' object.id %}">Update</a>
+      <a class="btn btn-danger btn-sm mt-2 mb-1 article-delete-button" href="{% url 'blog:articleDelete' object.id %}">Delete</a>
+    </div>
+  {% endif %}
+  </div>
+
+  <div class="right-column">
+    <div class="article-title"  >{{ object.title }}
+    </div>
+    <div class="article-body">{{ object.content }}</div>
+  </div>
+</div>
+{% endblock content %}
+
